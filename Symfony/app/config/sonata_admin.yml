@@ -1,0 +1,6 @@
+sonata_admin:
+    title:     Symfony 3
+    title_logo: /bundles/sonataadmin/logo_title.png
+    templates:
+            preview:  AppBundle:CRUD:preview.html.twig
+            layout: SonataAdminBundle::my_layout.html.twig
