@@ -1,0 +1,6 @@
+appbundle_home:
+    path:      /gallery
+    defaults:  { _controller: AppBundle:Default:gallery }
+appbundle_test:
+    path:      /test
+    defaults:  { _controller: AppBundle:Default:test }
