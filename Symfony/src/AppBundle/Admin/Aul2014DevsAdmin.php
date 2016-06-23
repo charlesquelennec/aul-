@@ -22,7 +22,7 @@ class Aul2014DevsAdmin extends Admin
             ->add('birthDay','text')
             ->add('school','text')
             ->add('major','text')
-            ->add('degreeDate','text')
+            ->add('degreeDate','datetime')
             ->add('nickname','text')
             ->end()
         ;
@@ -30,20 +30,42 @@ class Aul2014DevsAdmin extends Admin
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('nickname');
+        $datagridMapper->add('id')
+            ->add('ip')
+            ->add('createdAt')
+            ->add('languages')
+            ->add('lastName')
+            ->add('firstName')
+            ->add('email')
+            ->add('birthDay')
+            ->add('school')
+            ->add('major')
+            ->add('degreeDate')
+            ->add('nickname');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('email')
+            ->addIdentifier('id')
+            ->add('ip')
+            ->add('createdAt')
+            ->add('languages')
+            ->add('lastName')
+            ->add('firstName')
+            ->add('email')
+            ->add('birthDay')
+            ->add('school')
+            ->add('major')
+            ->add('degreeDate')
+            ->add('nickname')
         ;
     }
 
     public function toString($object)
     {
         return $object instanceof Aul2014Devs
-            ? $object->getNickname()
+            ? $object->getId()
             : 'Aul2014Devs';
     }
 

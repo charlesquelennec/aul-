@@ -12,39 +12,64 @@ class Aul2014LolAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('Aul2014Devs', array('class' => 'col-md-2'))
+            ->with('Aul2014Lol', array('class' => 'col-md-2'))
             ->add('ip', 'text')
             ->add('createdAt','datetime')
-            ->add('languages','text')
             ->add('lastName','text')
             ->add('firstName','text')
             ->add('email','text')
-            ->add('birthDay','text')
+            ->add('birthDay','datetime')
             ->add('school','text')
             ->add('major','text')
-            ->add('degreeDate','text')
+            ->add('degreeDate','datetime')
             ->add('nickname','text')
+            ->add('lolRole', 'text')
+            ->add('lolTeamname', 'text')
             ->end()
         ;
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('nickname');
+        $datagridMapper->add('id')
+            ->add('ip')
+            ->add('createdAt')
+            ->add('lastName')
+            ->add('firstName')
+            ->add('email')
+            ->add('birthDay')
+            ->add('school')
+            ->add('major')
+            ->add('degreeDate')
+            ->add('nickname')
+            ->add('lolRole')
+            ->add('lolTeamname');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('email')
+            ->addIdentifier('id')
+            ->add('ip')
+            ->add('createdAt')
+            ->add('lastName')
+            ->add('firstName')
+            ->add('email')
+            ->add('birthDay')
+            ->add('school')
+            ->add('major')
+            ->add('degreeDate')
+            ->add('nickname')
+            ->add('lolRole')
+            ->add('lolTeamname')
         ;
     }
 
     public function toString($object)
     {
-        return $object instanceof Aul2014Devs
-            ? $object->getNickname()
-            : 'Aul2014Devs';
+        return $object instanceof Aul2014Lol
+            ? $object->getId()
+            : 'Aul2014Lol';
     }
 
 }

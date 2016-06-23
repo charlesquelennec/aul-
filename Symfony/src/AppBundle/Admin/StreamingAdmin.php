@@ -2,6 +2,7 @@
 
 namespace AppBundle\Admin;
 
+use AppBundle\Entity\Streaming;
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
@@ -12,39 +13,37 @@ class StreamingAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('Aul2014Devs', array('class' => 'col-md-2'))
-            ->add('ip', 'text')
-            ->add('createdAt','datetime')
-            ->add('languages','text')
-            ->add('lastName','text')
-            ->add('firstName','text')
-            ->add('email','text')
-            ->add('birthDay','text')
-            ->add('school','text')
-            ->add('major','text')
-            ->add('degreeDate','text')
-            ->add('nickname','text')
+            ->with('Streaming', array('class' => 'col-md-2'))
+            ->add('activated', 'boolean')
+            ->add('url', 'text')
+            ->add('comment', 'text')
             ->end()
         ;
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('nickname');
+        $datagridMapper->add('id')
+            ->add('activated')
+            ->add('url')
+            ->add('comment');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('email')
+            ->addIdentifier('')
+            ->add('activated')
+            ->add('url')
+            ->add('comment')
         ;
     }
 
     public function toString($object)
     {
-        return $object instanceof Aul2014Devs
-            ? $object->getNickname()
-            : 'Aul2014Devs';
+        return $object instanceof Streaming
+            ? $object->getId()
+            : 'Streaming';
     }
 
 }
