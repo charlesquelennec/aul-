@@ -1,0 +1,39 @@
+<div id="head">
+    <a href="home_page.html.twig"><img src="/Visuels/LOGOTHEQUE/LOGO AUL/Logo/Fond Blanc/AUL logo 2014_White.png" style="cursor:pointer; width: 100px; height: 50px;"></a>
+
+    <select name="Gaming CUP" id="Gaming CUP"/>
+    <option value="GAMING CUP">GAMING CUP</option>
+    <option value="League Of Legend">League Of Legend</option>
+    <option value="Hearth Stone">Hearth Stone</option>
+    </select>
+
+    <input type="button" value="DEV CUP"/>
+    <input type="button" value="STREAMING"/>
+    <input type="button" value="PARTENAIRES"/>
+    <input type="button" value="FAQ"/>
+    <input type="button" value="INSCRIPTIONS"/>
+    <img src="/Visuels/LOGOTHEQUE/sharethis-logo.jpg" id="Lien" style="cursor:pointer; width: 50px; height: 50px;" onclick="document.getElementById('Link').style.visibility='visible';" onmousemove="menu()">
+
+    <div id="Link" style="visibility: hidden;">
+        <input type="button" value="FACEBOOK" style="display: block;" />
+        <input type="button" value="TWITTER" style="display: block;"/>
+        <input type="button" value="DAILYMOTION" style="display: block;"/>
+    </div>
+
+    <script type="text/javascript">
+        function menu()
+        {
+            if (document.getElementById('Link').style.visibility == 'hidden')
+            {
+                document.getElementById('Link').style.visibility = 'visible';
+            }
+            else
+            {
+                document.getElementById('Link').style.visibility = 'hidden';
+            }
+
+        }
+    </script>
+
+
+</div>

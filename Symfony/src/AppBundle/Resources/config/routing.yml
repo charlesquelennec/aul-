@@ -1,10 +1,14 @@
-appbundle_home:
-    path:      /home
-    defaults:  { _controller: AppBundle:Default:gallery }
+appbundle_homepage:
+    path:      /homepage
+    defaults:  { _controller: AppBundle:Default:homepage }
 
 appbundle_test:
     path:      /test
     defaults:  { _controller: AppBundle:Default:test }
+
+appbundle_header:
+    path:      /header
+    defaults:  { _controller: AppBundle:Default:header }
 
 appbundle_footer:
     path:      /footer
