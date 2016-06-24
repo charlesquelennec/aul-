@@ -6,6 +6,10 @@ appbundle_test:
     path:      /test
     defaults:  { _controller: AppBundle:Default:test }
 
+appbundle_testpicture:
+    path:      /testpicture
+    defaults:  { _controller: AppBundle:Default:testpicture }
+
 appbundle_picture:
     path:      /picture
     defaults:  { _controller: AppBundle:Default:picture }

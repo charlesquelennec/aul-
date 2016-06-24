@@ -1,1 +1,26 @@
 {%  extends 'AppBundle:Default:template_picture.html.twig'  %}
+
+{% block block1 %}
+    <div class="container">
+        <div class="row">
+            <h1>Ma Gallery</h1>
+            {% set i = 1  %}
+            {%  for picture in pictures %}
+
+                <h3>Image n°{{i}}</h3>
+
+                <p class="text-info">{{ picture.title }}</p>
+
+                {% set i=i+1%}
+
+                {% set runtimeConfig = {"thumbnail": {"size": [picture.width, picture.height] }} %}
+
+                <div id="picture{{ i }}" class="col-md-6 ">
+                    <img src="{{(picture.path)| imagine_filter('thumb_50x50', runtimeConfig)}}" class="img-rounded"  alt={{picture.title}}/></img>
+                </div>
+
+
+            {% endfor %}
+        </div>
+    </div>
+{%  endblock %}
