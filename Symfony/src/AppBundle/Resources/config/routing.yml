@@ -5,3 +5,19 @@ appbundle_home:
 appbundle_test:
     path:      /test
     defaults:  { _controller: AppBundle:Default:test }
+
+appbundle_footer:
+    path:      /footer
+    defaults:  { _controller: AppBundle:Default:footer }
+
+appbundle_footer_link1:
+    path:      /footer/link1
+    defaults:  { _controller: AppBundle:Default:footerlink1 }
+
+appbundle_footer_link2:
+    path:      /footer/link2
+    defaults:  { _controller: AppBundle:Default:footerlink2 }
+
+appbundle_footer_link3:
+    path:      /footer/link3
+    defaults:  { _controller: AppBundle:Default:footerlink3 }
