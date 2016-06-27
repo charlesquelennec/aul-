@@ -13,17 +13,25 @@
 
                 {% set runtimeConfig = {"thumbnail": {"size": [picture.width, picture.height] }} %}
 
-                {#{% if (i%2 == 0) %}#}
+                {% if (count == 4) %}
                 <div id="picture{{ i }}" class="col-lg-2 ">
                     <h3>Image n°{{i}}</h3>
                     <p class="text-info">{{ picture.title }}</p>
                     <img src="{{(picture.path)| imagine_filter('thumb_50x50', runtimeConfig)}}" class="img-rounded"  alt={{picture.title}}/></img>
                 </div>
-                {#{% else  %}#}
-                    {#<div id="picture{{ i }}" class="col-md-5 ">#}
-                        {#<img src="{{(picture.path)| imagine_filter('thumb_50x50', runtimeConfig)}}" class="img-rounded"  alt={{picture.title}}/></img>#}
-                    {#</div>#}
-                {#{% endif %}#}
+                    {% elseif (count == 3)%}
+                        <div id="picture{{ i }}" class="col-lg-3 ">
+                            <h3>Image n°{{i}}</h3>
+                            <p class="text-info">{{ picture.title }}</p>
+                            <img src="{{(picture.path)| imagine_filter('thumb_50x50', runtimeConfig)}}" class="img-rounded"  alt={{picture.title}}/></img>
+                        </div>
+                {% else  %}
+                    <div id="picture{{ i }}" class="col-lg-5 ">
+                        <h3>Image n°{{i}}</h3>
+                        <p class="text-info">{{ picture.title }}</p>
+                        <img src="{{(picture.path)| imagine_filter('thumb_50x50', runtimeConfig)}}" class="img-rounded"  alt={{picture.title}}/></img>
+                    </div>
+                {% endif %}
 
             {% endfor %}
         </div>
